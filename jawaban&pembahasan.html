@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pembahasan TKA Bahasa Indonesia 2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f5f7fa, #e4e8ec);
+      margin: 0;
+      display: flex;
+      min-height: 100vh;
+      color: #2d3748;
+    }
+    .sidebar {
+      width: 280px;
+      background: linear-gradient(160deg, #4f46e5, #5e72e4);
+      color: white;
+      padding: 2rem;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      flex-shrink: 0;
+    }
+    .sidebar-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .menu-btn {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 1rem;
+      text-align: left;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .menu-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .menu-btn.active {
+      background: white;
+      color: #4f46e5;
+      font-weight: 600;
+    }
+    .progress-container {
+      margin-top: 2rem;
+      background: rgba(0,0,0,0.1);
+      border-radius: 8px;
+      padding: 1rem;
+    }
+    .progress-bar {
+      height: 8px;
+      background: white;
+      border-radius: 4px;
+      margin-bottom: 5px;
+    }
+    .sidebar-footer {
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+    .container {
+      flex: 1;
+      margin: 2rem;
+      background: white;
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+    h1 {
+      text-align: center;
+      color: #4f46e5;
+      margin-bottom: 40px;
+      font-size: 2.2rem;
+      font-weight: 600;
+      background: linear-gradient(90deg, #4f46e5, #5e72e4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .question {
+      margin-bottom: 28px;
+      border-left: 4px solid #4f46e5;
+      padding-left: 20px;
+    }
+    .question-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .question h2 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    .question p {
+      background: rgba(79, 70, 229, 0.05);
+      padding: 16px;
+      border-radius: 8px;
+      font-size: 1rem;
+      line-height: 1.7;
+      border: 1px solid rgba(79, 70, 229, 0.1);
+    }
+    .answer-badge {
+      display: none;
+      background: rgba(79, 70, 229, 0.9);
+      color: white;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    .show-answers .answer-badge {
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2 class="sidebar-title">SmartLiving Menu</h2>
+    <div class="side-menu">
+      <button class="menu-btn active" onclick="setActive(this)">📖 Pembahasan</button>
+      <button class="menu-btn" onclick="toggleAnswers(this)">🔑 Kunci Jawaban</button>
+<!-- Tombol Kunci Jawaban -->
+<button 
+  onclick="toggleJawaban()" 
+  class="w-full flex items-center gap-2 p-4 rounded-xl bg-purple-500 text-white font-semibold shadow-md hover:bg-purple-600 transition">
+</button>
+
+<!-- Kontainer isi kunci jawaban (awalnya disembunyikan) -->
+<div id="kunciJawaban" class="hidden mt-4 p-4 bg-white rounded-xl shadow-md text-gray-800">
+  <h2 class="text-lg font-bold mb-2">🔓 Kunci Jawaban TKA Bahasa Indonesia</h2>
+  <ul class="list-decimal list-inside space-y-1 text-sm">
+    <li>No 1: A</li>
+    <li>No 2: B</li>
+    <li>No 3: C</li>
+    <li>No 4: D</li>
+    <li>No 5: A</li>
+    <li>No 6: C</li>
+    <li>No 7: B</li>
+    <li>No 8: D</li>
+    <li>No 9: A</li>
+    <li>No 10: C</li>
+    <li>No 11: B</li>
+    <li>No 12: A</li>
+    <li>No 13: D</li>
+    <li>No 14: C</li>
+    <li>No 15: B</li>
+    <li>No 16: A</li>
+    <li>No 17: C</li>
+    <li>No 18: B</li>
+    <li>No 19: D</li>
+    <li>No 20: C</li>
+    <li>No 21: A</li>
+    <li>No 22: D</li>
+    <li>No 23: B</li>
+    <li>No 24: C</li>
+    <li>No 25: A</li>
+    <li>No 26: D</li>
+    <li>No 27: B</li>
+    <li>No 28: A</li>
+    <li>No 29: C</li>
+    <li>No 30: D</li>
+  </ul>
+</div>
+
+<!-- JavaScript untuk Toggle -->
+<script>
+  function toggleJawaban() {
+    const jawabanBox = document.getElementById("kunciJawaban");
+    jawabanBox.classList.toggle("hidden");
+  }
+</script>
+      <button class="menu-btn" onclick="setActive(this)">📊 Progress</button>
+    </div>
+     <div class="sidebar-footer">
+      <p>© 2025 SmartLiving<br>Premium Edition</p>
+    </div>
+  </div>
+
+  <div class="container" id="question-container">
+    <h1>Pembahasan Soal TKA Bahasa Indonesia 2025</h1>
+
+    <!-- Soal 1 -->
+    <div class="question">
+      <div class="question-header">
+        <h2>Soal 1</h2>
+        <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: A</div>
+      </div>
+      <p>Pembahasan: Kalimat tidak efektif karena terdapat pengulangan yang tidak perlu. Kata "adalah merupakan" harus dipilih salah satu.</p>
+    </div>
+<!-- Soal 2 -->
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 2</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: C</div>
+  </div>
+  <p>Pembahasan: Kalimat ini ambigu karena subjek tidak jelas merujuk kepada siapa yang sedang "bermain".</p>
+</div>
+
+<!-- Soal 3 -->
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 3</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: B</div>
+  </div>
+  <p>Pembahasan: Ide pokok paragraf ini terletak pada awal paragraf karena menjelaskan gagasan utama secara umum, lalu diikuti penjelasannya.</p>
+</div>
+
+<!-- Soal 4 -->
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 4</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: D</div>
+  </div>
+  <p>Pembahasan: Teks argumentatif bertujuan menyampaikan pendapat disertai alasan yang logis dan fakta.</p>
+</div>
+
+<!-- Soal 5 -->
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 5</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: A</div>
+  </div>
+  <p>Pembahasan: Terdapat pleonasme karena frasa "naik ke atas" sudah cukup dengan "naik" atau "ke atas" saja.</p>
+</div>
+
+<!-- Soal 6 -->
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 6</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: B</div>
+  </div>
+  <p>Pembahasan: Kalimat ini menunjukkan ketidaksesuaian antara subjek dan predikat, sehingga harus diperbaiki agar selaras.</p>
+</div>
+
+<!-- Soal 7 -->
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 7</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: D</div>
+  </div>
+  <p>Pembahasan: Dalam kalimat tersebut, terjadi ketidakefektifan karena terdapat kata sambung ganda.</p>
+</div>
+
+<!-- Soal 8 -->
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 8</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: A</div>
+  </div>
+  <p>Pembahasan: Teks termasuk ke dalam eksposisi karena menyampaikan informasi dengan fakta.</p>
+</div>
+
+<!-- Soal 9 -->
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 9</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: B</div>
+  </div>
+  <p>Pembahasan: Penggunaan kata baku lebih tepat dalam konteks formal seperti pada paragraf ini.</p>
+</div>
+
+<!-- Soal 10 -->
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 10</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: C</div>
+  </div>
+  <p>Pembahasan: Kaidah kebahasaan teks prosedur menekankan urutan dan penggunaan kalimat perintah.</p>
+</div>
+
+<!-- Soal 11 -->
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 11</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: A</div>
+  </div>
+  <p>Pembahasan: Kesalahan terletak pada penggunaan ejaan, kata 'fikir' seharusnya ditulis 'pikir'.</p>
+</div>
+
+<!-- Soal 12 -->
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 12</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: B</div>
+  </div>
+  <p>Pembahasan: Makna tersirat dalam paragraf menunjukkan kritik terhadap kebijakan yang ada.</p>
+</div>
+
+<!-- Soal 13 -->
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 13</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: D</div>
+  </div>
+  <p>Pembahasan: Kalimat aktif lebih tepat digunakan dalam konteks ini dibandingkan kalimat pasif.</p>
+</div>
+
+<!-- Soal 14 -->
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 14</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: A</div>
+  </div>
+  <p>Pembahasan: Sinonim kata 'indah' dalam konteks ini seharusnya dipilih berdasarkan makna konotatif.</p>
+</div>
+
+<!-- Soal 15 -->
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 15</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: C</div>
+  </div>
+  <p>Pembahasan: Paragraf ini mendeskripsikan objek secara mendetail sehingga termasuk teks deskripsi.</p>
+</div>
+
+<!-- Soal 16 -->
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 16</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: B</div>
+  </div>
+  <p>Pembahasan: Kesalahan logika argumen dalam kalimat menyebabkan penalaran menjadi tidak valid.</p>
+</div>
+
+<!-- Soal 17 -->
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 17</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: C</div>
+  </div>
+  <p>Pembahasan: Struktur teks laporan hasil observasi terdiri dari pernyataan umum dan rincian.</p>
+</div>
+
+<!-- Soal 18 -->
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 18</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: D</div>
+  </div>
+  <p>Pembahasan: Kata 'karena' sebagai konjungsi kausal digunakan untuk menunjukkan hubungan sebab-akibat.</p>
+</div>
+
+<!-- Soal 19 -->
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 19</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: A</div>
+  </div>
+  <p>Pembahasan: Paragraf tersebut menggunakan analogi untuk memperjelas gagasan utama.</p>
+</div>
+
+<!-- Soal 20 -->
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 20</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: B</div>
+  </div>
+  <p>Pembahasan: Dalam kutipan tersebut, ditemukan ketidakkonsistenan sudut pandang pencerita.</p>
+</div>
+
+<!-- Soal 21 -->
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 21</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: C</div>
+  </div>
+  <p>Pembahasan: Penggunaan kata serapan asing dalam teks sebaiknya disesuaikan dengan EYD.</p>
+</div>
+
+<!-- Soal 22 -->
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 22</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: D</div>
+  </div>
+  <p>Pembahasan: Majas personifikasi digunakan dalam kalimat untuk memberikan efek imajinatif.</p>
+</div>
+
+<!-- Soal 23 -->
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 23</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: A</div>
+  </div>
+  <p>Pembahasan: Kesesuaian antara judul dan isi paragraf sangat penting untuk koherensi.</p>
+</div>
+
+<!-- Soal 24 -->
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 24</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: B</div>
+  </div>
+  <p>Pembahasan: Pemilihan diksi harus mempertimbangkan makna dan efek terhadap pembaca.</p>
+</div>
+
+<!-- Soal 25 -->
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 25</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: C</div>
+  </div>
+  <p>Pembahasan: Teks tersebut memiliki tujuan persuasif karena mengajak pembaca melakukan sesuatu.</p>
+</div>
+
+<!-- Soal 26 -->
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 26</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: A</div>
+  </div>
+  <p>Pembahasan: Tanda baca koma diperlukan untuk memisahkan anak kalimat secara jelas.</p>
+</div>
+
+<!-- Soal 27 -->
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 27</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: D</div>
+  </div>
+  <p>Pembahasan: Pemakaian kata depan dalam kalimat tidak tepat dan menimbulkan kerancuan.</p>
+</div>
+
+<!-- Soal 28 -->
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 28</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: B</div>
+  </div>
+  <p>Pembahasan: Penulisan kutipan langsung harus mengikuti kaidah penulisan yang benar.</p>
+</div>
+
+<!-- Soal 29 -->
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 29</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: C</div>
+  </div>
+  <p>Pembahasan: Kata tidak baku dalam paragraf tersebut harus diganti agar sesuai konteks akademik.</p>
+</div>
+
+<!-- Soal 30 -->
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 30</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: A</div>
+  </div>
+  <p>Pembahasan: Gagasan utama dalam paragraf terletak di akhir sebagai bentuk penegasan.</p>
+</div>
