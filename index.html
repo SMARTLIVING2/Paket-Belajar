@@ -1,1165 +1,462 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>30 Contoh Soal TKA Bahasa Indonesia 2025</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .card {
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-        .card:hover {
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
-        .answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease-out;
-        }
-        .answer.show {
-            max-height: 500px;
-        }
-        .pagination .active {
-            background-color: #3b82f6;
-            color: white;
-        }
-        .pagination li:not(.active):hover {
-            background-color: #e2e8f0;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pembahasan TKA Bahasa Indonesia 2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f5f7fa, #e4e8ec);
+      margin: 0;
+      display: flex;
+      min-height: 100vh;
+      color: #2d3748;
+    }
+    .sidebar {
+      width: 280px;
+      background: linear-gradient(160deg, #4f46e5, #5e72e4);
+      color: white;
+      padding: 2rem;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      flex-shrink: 0;
+    }
+    .sidebar-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .menu-btn {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 1rem;
+      text-align: left;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .menu-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .menu-btn.active {
+      background: white;
+      color: #4f46e5;
+      font-weight: 600;
+    }
+    .progress-container {
+      margin-top: 2rem;
+      background: rgba(0,0,0,0.1);
+      border-radius: 8px;
+      padding: 1rem;
+    }
+    .progress-bar {
+      height: 8px;
+      background: white;
+      border-radius: 4px;
+      margin-bottom: 5px;
+    }
+    .sidebar-footer {
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+    .container {
+      flex: 1;
+      margin: 2rem;
+      background: white;
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+    h1 {
+      text-align: center;
+      color: #4f46e5;
+      margin-bottom: 40px;
+      font-size: 2.2rem;
+      font-weight: 600;
+      background: linear-gradient(90deg, #4f46e5, #5e72e4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .question {
+      margin-bottom: 28px;
+      border-left: 4px solid #4f46e5;
+      padding-left: 20px;
+    }
+    .question-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .question h2 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    .question p {
+      background: rgba(79, 70, 229, 0.05);
+      padding: 16px;
+      border-radius: 8px;
+      font-size: 1rem;
+      line-height: 1.7;
+      border: 1px solid rgba(79, 70, 229, 0.1);
+    }
+    .answer-badge {
+      display: none;
+      background: rgba(79, 70, 229, 0.9);
+      color: white;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    .show-answers .answer-badge {
+      display: inline-block;
+    }
+  </style>
 </head>
-<body class="bg-gray-50 font-sans">
-    <header class="bg-white py-8 shadow-sm">
-        <div class="container mx-auto px-4">
-            <h1 class="text-3xl md:text-4xl font-bold text-center text-blue-700">30 Contoh Soal TKA Bahasa Indonesia 2025</h1>
-            <p class="text-lg md:text-xl text-center text-gray-600 mt-2">Latihan Pemahaman Tekstual, Inferensial, dan Evaluasi</p>
-        </div>
-    </header>
+<body>
+  <div class="sidebar">
+    <h2 class="sidebar-title">SmartLiving Menu</h2>
+    <div class="side-menu">
+      <button class="menu-btn active" onclick="setActive(this)">📖 Pembahasan</button>
+      <button class="menu-btn" onclick="toggleAnswers(this)">🔑
+      Kunci Jawaban</button>
+<!-- Tombol Kunci Jawaban -->
+<button 
+  onclick="toggleJawaban()" 
+  class="w-full flex items-center gap-2 p-4 rounded-xl bg-purple-500 text-white font-semibold shadow-md hover:bg-purple-600 transition">
+</button>
 
-    <main class="container mx-auto px-4 py-8">
-        <!-- Info Section -->
-        <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-8 rounded-r">
-            <div class="flex">
-                <div class="flex-shrink-0">
-                    <svg class="h-5 w-5 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
-                    </svg>
-                </div>
-                <div class="ml-3">
-                    <h3 class="text-sm font-medium text-blue-800">Petunjuk</h3>
-                    <div class="mt-1 text-sm text-blue-700">
-                        <p>Baca teks dengan cermat, kemudian jawab pertanyaannya. Gunakan tombol "Lihat Jawaban" untuk memeriksa pemahaman Anda.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Questions Container -->
-        <div id="questions-container" class="space-y-6">
-            <!-- Soal 1 -->
-            <div class="card bg-white p-6 rounded-lg">
-                <h3 class="text-lg font-semibold text-gray-800 mb-2">Soal 1</h3>
-                <div class="text-gray-700 mb-4">
-                    <p>Dalam novel "Laskar Pelangi" karya Andrea Hirata, terdapat tokoh Ikal yang digambarkan sebagai anak yang tekun belajar meskipun dalam keterbatasan ekonomi. Tokoh ini menjadi inspirasi bagi banyak pembaca karena keteguhannya.</p>
-                    <p class="mt-3 font-medium">Apa yang membuat tokoh Ikal menjadi inspirasi bagi pembaca?</p>
-                </div>
-                <div class="space-y-2 ml-4">
-                    <div class="flex items-center">
-                        <input type="radio" name="soal1" id="soal1a" class="mr-2">
-                        <label for="soal1a">A. Kekayaan yang dimilikinya</label>
-                    </div>
-                    <div class="flex items-center">
-                        <input type="radio" name="soal1" id="soal1b" class="mr-2">
-                        <label for="soal1b">B. Ketekunan dalam belajar meskipun dalam keterbatasan</label>
-                    </div>
-                    <div class="flex items-center">
-                        <input type="radio" name="soal1" id="soal1c" class="mr-2">
-                        <label for="soal1c">C. Banyaknya teman-temannya</label>
-                    </div>
-                    <div class="flex items-center">
-                        <input type="radio" name="soal1" id="soal1d" class="mr-2">
-                        <label for="soal1d">D. Kepandaiannya berolahraga</label>
-                    </div>
-                </div>
-                <button onclick="toggleAnswer(1)" class="mt-4 px-4 py-2 bg-blue-100 text-blue-700 rounded text-sm hover:bg-blue-200 transition"disabled=""> Lihat Jawaban</button>
-                <div id="answer-1" class="answer mt-4"hidden="">
-                    <p class="font-semibold">Jawaban: B. Ketekunan dalam belajar meskipun dalam keterbatasan</p>
-                    <div class="bg-gray-50 p-3 rounded mt-2">
-                        <p class="text-sm text-gray-600">Pembahasan: Dalam teks jelas disebutkan bahwa Ikal menjadi inspirasi karena keteguhannya dalam belajar meskipun dalam keterbatasan ekonomi. Pilihan B paling sesuai dengan isi teks.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Soal 2 -->
-            <div class="card bg-white p-6 rounded-lg">
-                <h3 class="text-lg font-semibold text-gray-800 mb-2">Soal 2</h3>
-                <div class="text-gray-700 mb-4">
-                    <p>Lautan di Indonesia menyimpan kekayaan hayati yang sangat beragam. Namun, eksploitasi berlebihan dan polusi plastik mengancam kelestarian ekosistem laut. Menurut penelitian, sampah plastik di laut dapat bertahan hingga ratusan tahun.</p>
-                    <p class="mt-3 font-medium">Apa gagasan utama paragraf tersebut?</p>
-                </div>
-                <div class="space-y-2 ml-4">
-                    <div class="flex items-center">
-                        <input type="radio" name="soal2" id="soal2a" class="mr-2">
-                        <label for="soal2a">A. Keindahan alam bawah laut Indonesia</label>
-                    </div>
-                    <div class="flex items-center">
-                        <input type="radio" name="soal2" id="soal2b" class="mr-2">
-                        <label for="soal2b">B. Ancaman terhadap kelestarian ekosistem laut Indonesia</label>
-                    </div>
-                    <div class="flex items-center">
-                        <input type="radio" name="soal2" id="soal2c" class="mr-2">
-                        <label for="soal2c">C. Jenis-jenis ikan yang ada di perairan Indonesia</label>
-                    </div>
-                    <div class="flex items-center">
-                        <input type="radio" name="soal2" id="soal2d" class="mr-2">
-                        <label for="soal2d">D. Teknologi untuk membersihkan sampah plastik</label>
-                    </div>
-                </div>
-                <button onclick="toggleAnswer(2)" class="mt-4 px-4 py-2 bg-blue-100 text-blue-700 rounded text-sm hover:bg-blue-200 transitiond"disabled="">Lihat Jawaban</button>
-                <div id="answer-2" class="answer mt-4"hidden="">
-                    <p class="font-semibold">Jawaban: B. Ancaman terhadap kelestarian ekosistem laut Indonesia</p>
-                    <div class="bg-gray-50 p-3 rounded mt-2">
-                        <p class="text-sm text-gray-600">Pembahasan: Gagasan utama paragraf tersebut adalah tentang ancaman terhadap kelestarian ekosistem laut Indonesia akibat eksploitasi berlebihan dan polusi plastik.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Soal 3 -->
-            <div class="card bg-white p-6 rounded-lg">
-                <h3 class="text-lg font-semibold text-gray-800 mb-2">Soal 3</h3>
-                <div class="text-gray-700 mb-4">
-                    <p>Karya sastra merupakan cerminan kehidupan masyarakat. Perubahan nilai-nilai sosial dalam masyarakat dapat ditelusuri melalui perkembangan karya sastra dari masa ke masa. Misalnya, novel-novel tahun 1920-an banyak mengangkat tema kolonialisme dan perjuangan.</p>
-                    <p class="mt-3 font-medium">Apa simpulan yang tepat berdasarkan paragraf tersebut?</p>
-                </div>
-                <div class="space-y-2 ml-4">
-                    <div class="flex items-center">
-                        <input type="radio" name="soal3" id="soal3a" class="mr-2">
-                        <label for="soal3a">A. Karya sastra selalu mengikuti perkembangan teknologi</label>
-                    </div>
-                    <div class="flex items-center">
-                        <input type="radio" name="soal3" id="soal3b" class="mr-2">
-                        <label for="soal3b">B. Karya sastra menggambarkan nilai-nilai sosial pada masanya</label>
-                    </div>
-                    <div class="flex items-center">
-                        <input type="radio" name="soal3" id="soal3c" class="mr-2">
-                        <label for="soal3c">C. Pemahaman sejarah hanya bisa didapat dari karya sastra</label>
-                    </div>
-                    <div class="flex items-center">
-                        <input type="radio" name="soal3" id="soal3d" class="mr-2">
-                        <label for="soal3d">D. Karya sastra tahun 1920-an tidak relevan lagi saat ini</label>
-                    </div>
-                </div>
-                <button onclick="toggleAnswer(3)" class="mt-4 px-4 py-2 bg-blue-100 text-blue-700 rounded text-sm hover:bg-blue-200 transition"disabled="">Lihat Jawaban</button>
-                <div id="answer-3" class="answer mt-4"hidden="">
-                    <p class="font-semibold">Jawaban: B. Karya sastra menggambarkan nilai-nilai sosial pada masanya</p>
-                    <div class="bg-gray-50 p-3 rounded mt-2">
-                        <p class="text-sm text-gray-600">Pembahasan: Paragraf menjelaskan bahwa karya sastra mencerminkan kehidupan dan nilai-nilai sosial masyarakat pada masanya, seperti terlihat dari tema-tema karya sastra tahun 1920-an.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Soal 4 -->
-            <div class="card bg-white p-6 rounded-lg">
-                <h3 class="text-lg font-semibold text-gray-800 mb-2">Soal 4</h3>
-                <div class="text-gray-700 mb-4">
-                    <p>"Menghirup udara segar di pagi hari,<br>
-                    Embun menyapa dengan rindu terpendam,<br>
-                    Matahari menampakkan wajahnya,<br>
-                    Membawa harapan untuk hari yang baru."</p>
-                    <p class="mt-3 font-medium">Amanat yang terkandung dalam puisi tersebut adalah ...</p>
-                </div>
-                <div class="space-y-2 ml-4">
-                    <div class="flex items-center">
-                        <input type="radio" name="soal4" id="soal4a" class="mr-2">
-                        <label for="soal4a">A. Kita harus menyukai alam</label>
-                    </div>
-                    <div class="flex items-center">
-                        <input type="radio" name="soal4" id="soal4b" class="mr-2">
-                        <label for="soal4b">B. Pagi hari adalah waktu terbaik untuk bekerja</label>
-                    </div>
-                    <div class="flex items-center">
-                        <input type="radio" name="soal4" id="soal4c" class="mr-2">
-                        <label for="soal4c">C. Ada harapan baru yang menyertai datangnya pagi</label>
-                    </div>
-                    <div class="flex items-center">
-                        <input type="radio" name="soal4" id="soal4d" class="mr-2">
-                        <label for="soal4d">D. Kita harus bangun pagi setiap hari</label>
-                    </div>
-                </div>
-                <button onclick="toggleAnswer(4)" class="mt-4 px-4 py-2 bg-blue-100 text-blue-700 rounded text-sm hover:bg-blue-200 transition" disabled="">Lihat Jawaban</button>
-                <div id="answer-4" class="answer mt-4"hidden="">
-                    <p class="font-semibold">Jawaban: C. Ada harapan baru yang menyertai datangnya pagi</p>
-                    <div class="bg-gray-50 p-3 rounded mt-2">
-                        <p class="text-sm text-gray-600">Pembahasan: Puisi tersebut menggambarkan datangnya pagi dengan penuh harapan baru. Hal ini terlihat dari baris terakhir puisi yang menyatakan matahari "Membawa harapan untuk hari yang baru."</p>
-                    </div>
-                </div>
-            </div>
-<!-- Soal 5 -->
-<div class="card bg-white p-6 rounded-lg">
-  <h3 class="text-lg font-semibold text-gray-800 mb-2">Soal 5</h3>
-  <div class="text-gray-700 mb-4">
-    <p>Apa sinonim dari kata "indah"?</p>
-  </div>
-  <div class="space-y-2 ml-4">
-    <div class="flex items-center">
-      <input type="radio" name="soal5" id="soal5a" class="mr-2">
-      <label for="soal5a">A. Cantik</label>
-    </div>
-    <div class="flex items-center">
-      <input type="radio" name="soal5" id="soal5b" class="mr-2">
-      <label for="soal5b">B. Buruk</label>
-    </div>
-    <div class="flex items-center">
-      <input type="radio" name="soal5" id="soal5c" class="mr-2">
-      <label for="soal5c">C. Jelek</label>
-    </div>
-    <div class="flex items-center">
-      <input type="radio" name="soal5" id="soal5d" class="mr-2">
-      <label for="soal5d">D. Kasar</label>
-    </div>
-  </div>
-  <button onclick="toggleAnswer(5)" class="mt-4 px-4 py-2 bg-blue-100 text-blue-700 rounded text-sm hover:bg-blue-200 transition"disabled="">
-    Lihat Jawaban
-  </button>
-  <div id="answer-5" class="answer mt-4"hidden="">
-    <p class="font-semibold">Jawaban: A. Cantik</p>
-    <div class="bg-gray-50 p-3 rounded mt-2">
-      <p class="text-sm text-gray-600">
-        Pembahasan: "Indah" memiliki makna serupa dengan "cantik" dalam konteks estetika atau keindahan visual.
-      </p>
-    </div>
-  </div>
+<!-- Kontainer isi kunci jawaban (awalnya disembunyikan) -->
+<div id="kunciJawaban" class="hidden mt-4 p-4 bg-white rounded-xl shadow-md text-gray-800">
+  <h2 class="text-lg font-bold mb-2">🔓 Kunci Jawaban TKA Bahasa Indonesia</h2>
+  <ul class="list-decimal list-inside space-y-1 text-sm">
+    <li>No 1: A</li>
+    <li>No 2: B</li>
+    <li>No 3: C</li>
+    <li>No 4: D</li>
+    <li>No 5: A</li>
+    <li>No 6: C</li>
+    <li>No 7: B</li>
+    <li>No 8: D</li>
+    <li>No 9: A</li>
+    <li>No 10: C</li>
+    <li>No 11: B</li>
+    <li>No 12: A</li>
+    <li>No 13: D</li>
+    <li>No 14: C</li>
+    <li>No 15: B</li>
+    <li>No 16: A</li>
+    <li>No 17: C</li>
+    <li>No 18: B</li>
+    <li>No 19: D</li>
+    <li>No 20: C</li>
+    <li>No 21: A</li>
+    <li>No 22: D</li>
+    <li>No 23: B</li>
+    <li>No 24: C</li>
+    <li>No 25: A</li>
+    <li>No 26: D</li>
+    <li>No 27: B</li>
+    <li>No 28: A</li>
+    <li>No 29: C</li>
+    <li>No 30: D</li>
+  </ul>
 </div>
 
-           
-          
+<!-- JavaScript untuk Toggle -->
+<script>
+  function toggleJawaban() {
+    const jawabanBox = document.getElementById("kunciJawaban");
+    jawabanBox.classList.toggle("hidden");
+  }
+</script>
+      <button class="menu-btn" onclick="setActive(this)">📊 Progress</button>
+    </div>
+     <div class="sidebar-footer">
+      <p>© 2025 SmartLiving<br>Premium Edition</p>
+    </div>
+  </div>
+
+  <div class="container" id="question-container">
+    <h1>Pembahasan Soal TKA Bahasa Indonesia 2025</h1>
+
+    <!-- Soal 1 -->
+    <div class="question">
+      <div class="question-header">
+        <h2>Soal 1</h2>
+        <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: A</div>
+      </div>
+      <p>Pembahasan: Kalimat tidak efektif karena terdapat pengulangan yang tidak perlu. Kata "adalah merupakan" harus dipilih salah satu.</p>
+    </div>
+<!-- Soal 2 -->
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 2</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: C</div>
+  </div>
+  <p>Pembahasan: Kalimat ini ambigu karena subjek tidak jelas merujuk kepada siapa yang sedang "bermain".</p>
+</div>
+
+<!-- Soal 3 -->
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 3</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: B</div>
+  </div>
+  <p>Pembahasan: Ide pokok paragraf ini terletak pada awal paragraf karena menjelaskan gagasan utama secara umum, lalu diikuti penjelasannya.</p>
+</div>
+
+<!-- Soal 4 -->
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 4</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: D</div>
+  </div>
+  <p>Pembahasan: Teks argumentatif bertujuan menyampaikan pendapat disertai alasan yang logis dan fakta.</p>
+</div>
+
+<!-- Soal 5 -->
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 5</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: A</div>
+  </div>
+  <p>Pembahasan: Terdapat pleonasme karena frasa "naik ke atas" sudah cukup dengan "naik" atau "ke atas" saja.</p>
+</div>
+
 <!-- Soal 6 -->
-<div class="card bg-white p-6 rounded-lg">
-    <h3 class="text-lg font-semibold text-gray-800 mb-2">Soal 6</h3>
-    <div class="text-gray-700 mb-4">
-        <p>Peribahasa “bagai air di daun talas” digunakan untuk menggambarkan seseorang yang ...</p>
-    </div>
-    <div class="space-y-2 ml-4">
-        <div class="flex items-center">
-            <input type="radio" name="soal6" id="soal6a" class="mr-2">
-            <label for="soal6a">A. Mudah diatur dan patuh</label>
-        </div>
-        <div class="flex items-center">
-            <input type="radio" name="soal6" id="soal6b" class="mr-2">
-            <label for="soal6b">B. Tidak memiliki pendirian tetap</label>
-        </div>
-        <div class="flex items-center">
-            <input type="radio" name="soal6" id="soal6c" class="mr-2">
-            <label for="soal6c">C. Suka membantu sesama</label>
-        </div>
-        <div class="flex items-center">
-            <input type="radio" name="soal6" id="soal6d" class="mr-2">
-            <label for="soal6d">D. Hidupnya selalu bahagia</label>
-        </div>
-    </div>
-    <button onclick="toggleAnswer(6)" class="mt-4 px-4 py-2 bg-blue-100 text-blue-700 rounded text-sm hover:bg-blue-200 transition"disabled="">Lihat Jawaban</button>
-    <div id="answer-6" class="answer mt-4"hidden="">
-        <p class="font-semibold">Jawaban: B. Tidak memiliki pendirian tetap</p>
-        <div class="bg-gray-50 p-3 rounded mt-2">
-            <p class="text-sm text-gray-600">Pembahasan: Peribahasa “bagai air di daun talas” menggambarkan orang yang mudah berubah sikap dan tidak memiliki pendirian tetap.</p>
-        </div>
-    </div>
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 6</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: B</div>
+  </div>
+  <p>Pembahasan: Kalimat ini menunjukkan ketidaksesuaian antara subjek dan predikat, sehingga harus diperbaiki agar selaras.</p>
 </div>
 
 <!-- Soal 7 -->
-<div class="card bg-white p-6 rounded-lg">
-    <h3 class="text-lg font-semibold text-gray-800 mb-2">Soal 7</h3>
-    <div class="text-gray-700 mb-4">
-        <p>“Cinta tanah air harus ditanamkan sejak dini kepada anak-anak.” Kalimat tersebut termasuk dalam jenis kalimat ...</p>
-    </div>
-    <div class="space-y-2 ml-4">
-        <div class="flex items-center">
-            <input type="radio" name="soal7" id="soal7a" class="mr-2">
-            <label for="soal7a">A. Perintah</label>
-        </div>
-        <div class="flex items-center">
-            <input type="radio" name="soal7" id="soal7b" class="mr-2">
-            <label for="soal7b">B. Ajakan</label>
-        </div>
-        <div class="flex items-center">
-            <input type="radio" name="soal7" id="soal7c" class="mr-2">
-            <label for="soal7c">C. Deklaratif</label>
-        </div>
-        <div class="flex items-center">
-            <input type="radio" name="soal7" id="soal7d" class="mr-2">
-            <label for="soal7d">D. Larangan</label>
-        </div>
-    </div>
-    <button onclick="toggleAnswer(7)" class="mt-4 px-4 py-2 bg-blue-100 text-blue-700 rounded text-sm hover:bg-blue-200 transition"disabled="">Lihat Jawaban</button>
-    <div id="answer-7" class="answer mt-4"hidden="">
-        <p class="font-semibold">Jawaban: C. Deklaratif</p>
-        <div class="bg-gray-50 p-3 rounded mt-2">
-            <p class="text-sm text-gray-600">Pembahasan: Kalimat tersebut menyatakan suatu fakta atau pendapat, sehingga termasuk kalimat deklaratif.</p>
-        </div>
-    </div>
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 7</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: D</div>
+  </div>
+  <p>Pembahasan: Dalam kalimat tersebut, terjadi ketidakefektifan karena terdapat kata sambung ganda.</p>
 </div>
 
 <!-- Soal 8 -->
-<div class="card bg-white p-6 rounded-lg">
-    <h3 class="text-lg font-semibold text-gray-800 mb-2">Soal 8</h3>
-    <div class="text-gray-700 mb-4">
-        <p>Antonim dari kata “progresif” dalam konteks perubahan sosial adalah ...</p>
-    </div>
-    <div class="space-y-2 ml-4">
-        <div class="flex items-center">
-            <input type="radio" name="soal8" id="soal8a" class="mr-2">
-            <label for="soal8a">A. Inovatif</label>
-        </div>
-        <div class="flex items-center">
-            <input type="radio" name="soal8" id="soal8b" class="mr-2">
-            <label for="soal8b">B. Konservatif</label>
-        </div>
-        <div class="flex items-center">
-            <input type="radio" name="soal8" id="soal8c" class="mr-2">
-            <label for="soal8c">C. Kreatif</label>
-        </div>
-        <div class="flex items-center">
-            <input type="radio" name="soal8" id="soal8d" class="mr-2">
-            <label for="soal8d">D. Adaptif</label>
-        </div>
-    </div>
-    <button onclick="toggleAnswer(8)" class="mt-4 px-4 py-2 bg-blue-100 text-blue-700 rounded text-sm hover:bg-blue-200 transition"disabled="">Lihat Jawaban</button>
-    <div id="answer-8" class="answer mt-4"hidden="">
-        <p class="font-semibold">Jawaban: B. Konservatif</p>
-        <div class="bg-gray-50 p-3 rounded mt-2">
-            <p class="text-sm text-gray-600">Pembahasan: Progresif berarti cenderung pada perubahan dan kemajuan, sedangkan konservatif berarti mempertahankan kondisi lama atau tradisional.</p>
-        </div>
-    </div>
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 8</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: A</div>
+  </div>
+  <p>Pembahasan: Teks termasuk ke dalam eksposisi karena menyampaikan informasi dengan fakta.</p>
 </div>
 
 <!-- Soal 9 -->
-<div class="card bg-white p-6 rounded-lg">
-    <h3 class="text-lg font-semibold text-gray-800 mb-2">Soal 9</h3>
-    <div class="text-gray-700 mb-4">
-        <p>Manakah kalimat yang menggunakan konjungsi kausalitas?</p>
-    </div>
-    <div class="space-y-2 ml-4">
-        <div class="flex items-center">
-            <input type="radio" name="soal9" id="soal9a" class="mr-2">
-            <label for="soal9a">A. Ia pergi ke pasar dan membeli buah.</label>
-        </div>
-        <div class="flex items-center">
-            <input type="radio" name="soal9" id="soal9b" class="mr-2">
-            <label for="soal9b">B. Walaupun hujan, ia tetap berangkat sekolah.</label>
-        </div>
-        <div class="flex items-center">
-            <input type="radio" name="soal9" id="soal9c" class="mr-2">
-            <label for="soal9c">C. Karena sakit, ia tidak masuk sekolah.</label>
-        </div>
-        <div class="flex items-center">
-            <input type="radio" name="soal9" id="soal9d" class="mr-2">
-            <label for="soal9d">D. Ia belajar sambil mendengarkan musik.</label>
-        </div>
-    </div>
-    <button onclick="toggleAnswer(9)" class="mt-4 px-4 py-2 bg-blue-100 text-blue-700 rounded text-sm hover:bg-blue-200 transition"disabled="">Lihat Jawaban</button>
-    <div id="answer-9" class="answer mt-4"hidden="">
-        <p class="font-semibold">Jawaban: C. Karena sakit, ia tidak masuk sekolah.</p>
-        <div class="bg-gray-50 p-3 rounded mt-2">
-            <p class="text-sm text-gray-600">Pembahasan: Konjungsi kausalitas menyatakan sebab-akibat, dan “karena” adalah kata penghubung kausal.</p>
-        </div>
-    </div>
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 9</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: B</div>
+  </div>
+  <p>Pembahasan: Penggunaan kata baku lebih tepat dalam konteks formal seperti pada paragraf ini.</p>
 </div>
 
 <!-- Soal 10 -->
-<div class="card bg-white p-6 rounded-lg">
-    <h3 class="text-lg font-semibold text-gray-800 mb-2">Soal 10</h3>
-    <div class="text-gray-700 mb-4">
-        <p>Kalimat efektif ditandai dengan penggunaan ...</p>
-    </div>
-    <div class="space-y-2 ml-4">
-        <div class="flex items-center">
-            <input type="radio" name="soal10" id="soal10a" class="mr-2">
-            <label for="soal10a">A. Kata-kata yang panjang dan rumit</label>
-        </div>
-        <div class="flex items-center">
-            <input type="radio" name="soal10" id="soal10b" class="mr-2">
-            <label for="soal10b">B. Kalimat pasif berulang-ulang</label>
-        </div>
-        <div class="flex items-center">
-            <input type="radio" name="soal10" id="soal10c" class="mr-2">
-            <label for="soal10c">C. Susunan logis, padat, dan tidak boros kata</label>
-        </div>
-        <div class="flex items-center">
-            <input type="radio" name="soal10" id="soal10d" class="mr-2">
-            <label for="soal10d">D. Kata baku yang digunakan secara bebas</label>
-        </div>
-    </div>
-    <button onclick="toggleAnswer(10)" class="mt-4 px-4 py-2 bg-blue-100 text-blue-700 rounded text-sm hover:bg-blue-200 transition"disabled="">Lihat Jawaban</button>
-    <div id="answer-10" class="answer mt-4"hidden="">
-        <p class="font-semibold">Jawaban: C. Susunan logis, padat, dan tidak boros kata</p>
-        <div class="bg-gray-50 p-3 rounded mt-2">
-            <p class="text-sm text-gray-600">Pembahasan: Kalimat efektif memiliki ciri-ciri seperti susunan logis, tidak boros kata, dan sesuai kaidah bahasa Indonesia yang benar.</p>
-        </div>
-    </div>
- </div>
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 10</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: C</div>
+  </div>
+  <p>Pembahasan: Kaidah kebahasaan teks prosedur menekankan urutan dan penggunaan kalimat perintah.</p>
+</div>
+
 <!-- Soal 11 -->
-<div class="card bg-white p-6 rounded-lg">
-    <h3 class="text-lg font-semibold text-gray-800 mb-2">Soal 11</h3>
-    <div class="text-gray-700 mb-4">
-        <p>Kalimat "Ia membaca buku sambil mendengarkan musik" menunjukkan hubungan ...</p>
-    </div>
-    <div class="space-y-2 ml-4">
-        <div class="flex items-center">
-            <input type="radio" name="soal11" id="soal11a" class="mr-2">
-            <label for="soal11a">A. Sebab-akibat</label>
-        </div>
-        <div class="flex items-center">
-            <input type="radio" name="soal11" id="soal11b" class="mr-2">
-            <label for="soal11b">B. Pertentangan</label>
-        </div>
-        <div class="flex items-center">
-            <input type="radio" name="soal11" id="soal11c" class="mr-2">
-            <label for="soal11c">C. Waktu</label>
-        </div>
-        <div class="flex items-center">
-            <input type="radio" name="soal11" id="soal11d" class="mr-2">
-            <label for="soal11d">D. Kegiatan bersamaan</label>
-        </div>
-    </div>
-    <button onclick="toggleAnswer(11)" class="mt-4 px-4 py-2 bg-blue-100 text-blue-700 rounded text-sm hover:bg-blue-200 transition"disabled="">Lihat Jawaban</button>
-    <div id="answer-11" class="answer mt-4"hidden="">
-        <p class="font-semibold">Jawaban: D. Kegiatan bersamaan</p>
-        <div class="bg-gray-50 p-3 rounded mt-2">
-            <p class="text-sm text-gray-600">Pembahasan: Kalimat itu menggambarkan dua kegiatan yang dilakukan secara bersamaan, yaitu membaca dan mendengarkan musik.</p>
-        </div>
-    </div>
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 11</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: A</div>
+  </div>
+  <p>Pembahasan: Kesalahan terletak pada penggunaan ejaan, kata 'fikir' seharusnya ditulis 'pikir'.</p>
 </div>
 
 <!-- Soal 12 -->
-<div class="card bg-white p-6 rounded-lg">
-    <h3 class="text-lg font-semibold text-gray-800 mb-2">Soal 12</h3>
-    <div class="text-gray-700 mb-4">
-        <p>Manakah kalimat berikut yang merupakan kalimat tidak efektif?</p>
-    </div>
-    <div class="space-y-2 ml-4">
-        <div class="flex items-center">
-            <input type="radio" name="soal12" id="soal12a" class="mr-2">
-            <label for="soal12a">A. Para siswa-siswa sedang belajar di perpustakaan.</label>
-        </div>
-        <div class="flex items-center">
-            <input type="radio" name="soal12" id="soal12b" class="mr-2">
-            <label for="soal12b">B. Semua siswa hadir tepat waktu.</label>
-        </div>
-        <div class="flex items-center">
-            <input type="radio" name="soal12" id="soal12c" class="mr-2">
-            <label for="soal12c">C. Mereka belajar kelompok setiap sore.</label>
-        </div>
-        <div class="flex items-center">
-            <input type="radio" name="soal12" id="soal12d" class="mr-2">
-            <label for="soal12d">D. Saya mengerjakan PR setelah pulang sekolah.</label>
-        </div>
-    </div>
-    <button onclick="toggleAnswer(12)" class="mt-4 px-4 py-2 bg-blue-100 text-blue-700 rounded text-sm hover:bg-blue-200 transition"disabled="">Lihat Jawaban</button>
-    <div id="answer-12" class="answer mt-4" hidden="">
-        <p class="font-semibold">Jawaban: A. Para siswa-siswa sedang belajar di perpustakaan.</p>
-        <div class="bg-gray-50 p-3 rounded mt-2">
-            <p class="text-sm text-gray-600">Pembahasan: Kalimat tersebut tidak efektif karena terjadi pengulangan makna (pleonasme) antara “para” dan “siswa-siswa”.</p>
-        </div>
-    </div>
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 12</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: B</div>
+  </div>
+  <p>Pembahasan: Makna tersirat dalam paragraf menunjukkan kritik terhadap kebijakan yang ada.</p>
 </div>
 
 <!-- Soal 13 -->
-<div class="card bg-white p-6 rounded-lg">
-    <h3 class="text-lg font-semibold text-gray-800 mb-2">Soal 13</h3>
-    <div class="text-gray-700 mb-4">
-        <p>Antonim kata “konflik” dalam konteks sosial adalah ...</p>
-    </div>
-    <div class="space-y-2 ml-4">
-        <div class="flex items-center">
-            <input type="radio" name="soal13" id="soal13a" class="mr-2">
-            <label for="soal13a">A. Perang</label>
-        </div>
-        <div class="flex items-center">
-            <input type="radio" name="soal13" id="soal13b" class="mr-2">
-            <label for="soal13b">B. Diskusi</label>
-        </div>
-        <div class="flex items-center">
-            <input type="radio" name="soal13" id="soal13c" class="mr-2">
-            <label for="soal13c">C. Kerukunan</label>
-        </div>
-        <div class="flex items-center">
-            <input type="radio" name="soal13" id="soal13d" class="mr-2">
-            <label for="soal13d">D. Negosiasi</label>
-        </div>
-    </div>
-    <button onclick="toggleAnswer(13)" class="mt-4 px-4 py-2 bg-blue-100 text-blue-700 rounded text-sm hover:bg-blue-200 transition"disabled="">Lihat Jawaban</button>
-    <div id="answer-13" class="answer mt-4"hidden="">
-        <p class="font-semibold">Jawaban: C. Kerukunan</p>
-        <div class="bg-gray-50 p-3 rounded mt-2">
-            <p class="text-sm text-gray-600">Pembahasan: Konflik berarti pertentangan, sedangkan kerukunan adalah keadaan damai tanpa pertentangan.</p>
-        </div>
-    </div>
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 13</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: D</div>
+  </div>
+  <p>Pembahasan: Kalimat aktif lebih tepat digunakan dalam konteks ini dibandingkan kalimat pasif.</p>
 </div>
 
 <!-- Soal 14 -->
-<div class="card bg-white p-6 rounded-lg">
-    <h3 class="text-lg font-semibold text-gray-800 mb-2">Soal 14</h3>
-    <div class="text-gray-700 mb-4">
-        <p>Kalimat "Walaupun hujan deras, mereka tetap pergi ke sekolah" menunjukkan hubungan ...</p>
-    </div>
-    <div class="space-y-2 ml-4">
-        <div class="flex items-center">
-            <input type="radio" name="soal14" id="soal14a" class="mr-2">
-            <label for="soal14a">A. Kausalitas</label>
-        </div>
-        <div class="flex items-center">
-            <input type="radio" name="soal14" id="soal14b" class="mr-2">
-            <label for="soal14b">B. Tujuan</label>
-        </div>
-        <div class="flex items-center">
-            <input type="radio" name="soal14" id="soal14c" class="mr-2">
-            <label for="soal14c">C. Pertentangan</label>
-        </div>
-        <div class="flex items-center">
-            <input type="radio" name="soal14" id="soal14d" class="mr-2">
-            <label for="soal14d">D. Waktu</label>
-        </div>
-    </div>
-    <button onclick="toggleAnswer(14)" class="mt-4 px-4 py-2 bg-blue-100 text-blue-700 rounded text-sm hover:bg-blue-200 transition"disabled="">Lihat Jawaban</button>
-    <div id="answer-14" class="answer mt-4"hidden="">
-        <p class="font-semibold">Jawaban: C. Pertentangan</p>
-        <div class="bg-gray-50 p-3 rounded mt-2">
-            <p class="text-sm text-gray-600">Pembahasan: Konjungsi "walaupun" menunjukkan adanya pertentangan antara dua hal.</p>
-        </div>
-    </div>
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 14</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: A</div>
+  </div>
+  <p>Pembahasan: Sinonim kata 'indah' dalam konteks ini seharusnya dipilih berdasarkan makna konotatif.</p>
 </div>
 
 <!-- Soal 15 -->
-<div class="card bg-white p-6 rounded-lg">
-    <h3 class="text-lg font-semibold text-gray-800 mb-2">Soal 15</h3>
-    <div class="text-gray-700 mb-4">
-        <p>Kata “transparan” dalam kalimat "Pemerintah harus transparan dalam penggunaan anggaran" berarti ...</p>
-    </div>
-    <div class="space-y-2 ml-4">
-        <div class="flex items-center">
-            <input type="radio" name="soal15" id="soal15a" class="mr-2">
-            <label for="soal15a">A. Tertutup</label>
-        </div>
-        <div class="flex items-center">
-            <input type="radio" name="soal15" id="soal15b" class="mr-2">
-            <label for="soal15b">B. Rahasia</label>
-        </div>
-        <div class="flex items-center">
-            <input type="radio" name="soal15" id="soal15c" class="mr-2">
-            <label for="soal15c">C. Jelas dan terbuka</label>
-        </div>
-        <div class="flex items-center">
-            <input type="radio" name="soal15" id="soal15d" class="mr-2">
-            <label for="soal15d">D. Rumit dan tidak dipahami</label>
-        </div>
-    </div>
-    <button onclick="toggleAnswer(15)" class="mt-4 px-4 py-2 bg-blue-100 text-blue-700 rounded text-sm hover:bg-blue-200 transition"disabled="">Lihat Jawaban</button>
-    <div id="answer-15" class="answer mt-4"hidden="">
-        <p class="font-semibold">Jawaban: C. Jelas dan terbuka</p>
-        <div class="bg-gray-50 p-3 rounded mt-2">
-            <p class="text-sm text-gray-600">Pembahasan: Transparan berarti dapat dilihat dengan jelas atau terbuka, dalam konteks ini artinya pemerintah tidak menyembunyikan informasi anggaran.</p>
-        </div>
-    </div>
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 15</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: C</div>
+  </div>
+  <p>Pembahasan: Paragraf ini mendeskripsikan objek secara mendetail sehingga termasuk teks deskripsi.</p>
 </div>
+
 <!-- Soal 16 -->
-<div class="card bg-white p-6 rounded-lg">
-    <h3 class="text-lg font-semibold text-gray-800 mb-2">Soal 16</h3>
-    <div class="text-gray-700 mb-4">
-        <p>“Pemerintah perlu memperhatikan keberlangsungan hidup bahasa daerah karena bahasa merupakan identitas budaya. Namun, upaya pelestarian bahasa kerap terbentur pada kurangnya minat generasi muda.”</p>
-        <p class="mt-3 font-medium">Apa hubungan antarkalimat dalam paragraf tersebut?</p>
-    </div>
-    <div class="space-y-2 ml-4">
-        <div class="flex items-center"><input type="radio" name="soal16" id="soal16a" class="mr-2"><label for="soal16a">A. Perbandingan</label></div>
-        <div class="flex items-center"><input type="radio" name="soal16" id="soal16b" class="mr-2"><label for="soal16b">B. Pertentangan</label></div>
-        <div class="flex items-center"><input type="radio" name="soal16" id="soal16c" class="mr-2"><label for="soal16c">C. Penambahan</label></div>
-        <div class="flex items-center"><input type="radio" name="soal16" id="soal16d" class="mr-2"><label for="soal16d">D. Sebab-akibat</label></div>
-    </div>
-    <button onclick="toggleAnswer(16)" class="mt-4 px-4 py-2 bg-blue-100 text-blue-700 rounded text-sm hover:bg-blue-200 transition"disabled="">Lihat Jawaban</button>
-    <div id="answer-16" class="answer mt-4"hidden="">
-        <p class="font-semibold">Jawaban: B. Pertentangan</p>
-        <div class="bg-gray-50 p-3 rounded mt-2"><p class="text-sm text-gray-600">Pembahasan: Terdapat pertentangan antara kebutuhan pelestarian dan kenyataan kurangnya minat.</p></div>
-    </div>
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 16</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: B</div>
+  </div>
+  <p>Pembahasan: Kesalahan logika argumen dalam kalimat menyebabkan penalaran menjadi tidak valid.</p>
 </div>
 
 <!-- Soal 17 -->
-<div class="card bg-white p-6 rounded-lg">
-    <h3 class="text-lg font-semibold text-gray-800 mb-2">Soal 17</h3>
-    <div class="text-gray-700 mb-4">
-        <p>“Jika para pemuda tidak mengambil peran dalam pembangunan, maka negara akan kehilangan potensi besar.”</p>
-        <p class="mt-3 font-medium">Kalimat tersebut termasuk dalam jenis kalimat?</p>
-    </div>
-    <div class="space-y-2 ml-4">
-        <div class="flex items-center"><input type="radio" name="soal17" id="soal17a" class="mr-2"><label for="soal17a">A. Deklaratif</label></div>
-        <div class="flex items-center"><input type="radio" name="soal17" id="soal17b" class="mr-2"><label for="soal17b">B. Imperatif</label></div>
-        <div class="flex items-center"><input type="radio" name="soal17" id="soal17c" class="mr-2"><label for="soal17c">C. Interogatif</label></div>
-        <div class="flex items-center"><input type="radio" name="soal17" id="soal17d" class="mr-2"><label for="soal17d">D. Kondisional</label></div>
-    </div>
-    <button onclick="toggleAnswer(17)" class="mt-4 px-4 py-2 bg-blue-100 text-blue-700 rounded text-sm hover:bg-blue-200 transition"disabled="">Lihat Jawaban</button>
-    <div id="answer-17" class="answer mt-4"hidden="">
-        <p class="font-semibold">Jawaban: D. Kondisional</p>
-        <div class="bg-gray-50 p-3 rounded mt-2"><p class="text-sm text-gray-600">Pembahasan: Kalimat ini bersyarat (“jika ... maka ...”), maka tergolong kalimat kondisional.</p></div>
-    </div>
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 17</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: C</div>
+  </div>
+  <p>Pembahasan: Struktur teks laporan hasil observasi terdiri dari pernyataan umum dan rincian.</p>
 </div>
 
 <!-- Soal 18 -->
-<div class="card bg-white p-6 rounded-lg">
-    <h3 class="text-lg font-semibold text-gray-800 mb-2">Soal 18</h3>
-    <div class="text-gray-700 mb-4">
-        <p>“Langkah konkret perlu segera diambil untuk menanggulangi krisis pangan, seperti memperluas lahan produktif dan memperbaiki distribusi.”</p>
-        <p class="mt-3 font-medium">Gagasan utama kalimat tersebut adalah ...</p>
-    </div>
-    <div class="space-y-2 ml-4">
-        <div class="flex items-center"><input type="radio" name="soal18" id="soal18a" class="mr-2"><label for="soal18a">A. Pentingnya memperluas lahan produktif</label></div>
-        <div class="flex items-center"><input type="radio" name="soal18" id="soal18b" class="mr-2"><label for="soal18b">B. Pentingnya memperbaiki distribusi pangan</label></div>
-        <div class="flex items-center"><input type="radio" name="soal18" id="soal18c" class="mr-2"><label for="soal18c">C. Diperlukannya langkah konkret menanggulangi krisis pangan</label></div>
-        <div class="flex items-center"><input type="radio" name="soal18" id="soal18d" class="mr-2"><label for="soal18d">D. Krisis pangan mengancam masyarakat desa</label></div>
-    </div>
-    <button onclick="toggleAnswer(18)" class="mt-4 px-4 py-2 bg-blue-100 text-blue-700 rounded text-sm hover:bg-blue-200 transition"disabled="">Lihat Jawaban</button>
-    <div id="answer-18" class="answer mt-4"hidden="">
-        <p class="font-semibold">Jawaban: C. Diperlukannya langkah konkret menanggulangi krisis pangan</p>
-        <div class="bg-gray-50 p-3 rounded mt-2"><p class="text-sm text-gray-600">Pembahasan: Gagasan utama adalah perlunya langkah konkret, sedangkan lainnya adalah penjelas.</p></div>
-    </div>
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 18</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: D</div>
+  </div>
+  <p>Pembahasan: Kata 'karena' sebagai konjungsi kausal digunakan untuk menunjukkan hubungan sebab-akibat.</p>
 </div>
 
 <!-- Soal 19 -->
-<div class="card bg-white p-6 rounded-lg">
-    <h3 class="text-lg font-semibold text-gray-800 mb-2">Soal 19</h3>
-    <div class="text-gray-700 mb-4">
-        <p>“Para pegiat lingkungan melakukan reboisasi bukan hanya untuk memperbaiki hutan yang rusak, tetapi juga untuk mencegah banjir dan tanah longsor.”</p>
-        <p class="mt-3 font-medium">Apa fungsi kata “tetapi juga” dalam kalimat tersebut?</p>
-    </div>
-    <div class="space-y-2 ml-4">
-        <div class="flex items-center"><input type="radio" name="soal19" id="soal19a" class="mr-2"><label for="soal19a">A. Penegasan</label></div>
-        <div class="flex items-center"><input type="radio" name="soal19" id="soal19b" class="mr-2"><label for="soal19b">B. Pertentangan</label></div>
-        <div class="flex items-center"><input type="radio" name="soal19" id="soal19c" class="mr-2"><label for="soal19c">C. Penambahan</label></div>
-        <div class="flex items-center"><input type="radio" name="soal19" id="soal19d" class="mr-2"><label for="soal19d">D. Penguatan argumen</label></div>
-    </div>
-    <button onclick="toggleAnswer(19)" class="mt-4 px-4 py-2 bg-blue-100 text-blue-700 rounded text-sm hover:bg-blue-200 transition"disabled="">Lihat Jawaban</button>
-    <div id="answer-19" class="answer mt-4"hidden="">
-        <p class="font-semibold">Jawaban: C. Penambahan</p>
-        <div class="bg-gray-50 p-3 rounded mt-2"><p class="text-sm text-gray-600">Pembahasan: “Tetapi juga” berfungsi sebagai penambahan tujuan lain dari reboisasi.</p></div>
-    </div>
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 19</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: A</div>
+  </div>
+  <p>Pembahasan: Paragraf tersebut menggunakan analogi untuk memperjelas gagasan utama.</p>
 </div>
 
 <!-- Soal 20 -->
-<div class="card bg-white p-6 rounded-lg">
-    <h3 class="text-lg font-semibold text-gray-800 mb-2">Soal 20</h3>
-    <div class="text-gray-700 mb-4">
-        <p>“Teknologi berkembang sangat pesat. Jika tidak dibarengi dengan literasi digital yang baik, maka masyarakat akan mudah terjebak informasi palsu dan manipulatif.”</p>
-        <p class="mt-3 font-medium">Kalimat kedua dalam teks tersebut berfungsi sebagai ...</p>
-    </div>
-    <div class="space-y-2 ml-4">
-        <div class="flex items-center"><input type="radio" name="soal20" id="soal20a" class="mr-2"><label for="soal20a">A. Penegasan terhadap pernyataan sebelumnya</label></div>
-        <div class="flex items-center"><input type="radio" name="soal20" id="soal20b" class="mr-2"><label for="soal20b">B. Penjelasan dari kalimat pertama</label></div>
-        <div class="flex items-center"><input type="radio" name="soal20" id="soal20c" class="mr-2"><label for="soal20c">C. Konsekuensi dari kondisi dalam kalimat pertama</label></div>
-        <div class="flex items-center"><input type="radio" name="soal20" id="soal20d" class="mr-2"><label for="soal20d">D. Pengulangan informasi dari kalimat pertama</label></div>
-    </div>
-    <button onclick="toggleAnswer(20)" class="mt-4 px-4 py-2 bg-blue-100 text-blue-700 rounded text-sm hover:bg-blue-200 transition"disabled="">Lihat Jawaban</button>
-    <div id="answer-20" class="answer mt-4"hidden="">
-        <p class="font-semibold">Jawaban: C. Konsekuensi dari kondisi dalam kalimat pertama</p>
-        <div class="bg-gray-50 p-3 rounded mt-2"><p class="text-sm text-gray-600">Pembahasan: Kalimat kedua merupakan akibat atau konsekuensi dari perkembangan teknologi tanpa literasi digital.</p>
-        </div>
-    </div>
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 20</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: B</div>
+  </div>
+  <p>Pembahasan: Dalam kutipan tersebut, ditemukan ketidakkonsistenan sudut pandang pencerita.</p>
 </div>
+
 <!-- Soal 21 -->
-<div class="card bg-white p-6 rounded-lg">
-    <h3 class="text-lg font-semibold text-gray-800 mb-2">Soal 21</h3>
-    <div class="text-gray-700 mb-4">
-        <p>"Sejak diberlakukannya kurikulum Merdeka Belajar, banyak sekolah mulai menyesuaikan metode pengajaran agar lebih kontekstual dan berpusat pada siswa. Guru diberi kebebasan lebih luas dalam menyusun modul ajar, memilih pendekatan, serta menyesuaikan materi dengan kondisi lingkungan sekitar. Hal ini memberikan ruang lebih bagi guru untuk berinovasi, namun juga menuntut tanggung jawab dan kesiapan yang lebih tinggi. Kurikulum ini bertujuan untuk menghasilkan lulusan yang memiliki kompetensi abad 21, seperti berpikir kritis, kolaborasi, kreativitas, dan komunikasi yang baik."
-        </p>
-        <p class="mt-3 font-medium">Apa fokus utama dalam pengembangan Kurikulum Merdeka Belajar menurut bacaan?</p>
-    </div>
-    <div class="space-y-2 ml-4">
-        <div class="flex items-center">
-            <input type="radio" name="soal21" id="soal21a" class="mr-2">
-            <label for="soal21a">A. Menyederhanakan sistem administrasi guru</label>
-        </div>
-        <div class="flex items-center">
-            <input type="radio" name="soal21" id="soal21b" class="mr-2">
-            <label for="soal21b">B. Meningkatkan kompetensi abad 21 pada siswa</label>
-        </div>
-        <div class="flex items-center">
-            <input type="radio" name="soal21" id="soal21c" class="mr-2">
-            <label for="soal21c">C. Menambah jam pelajaran siswa</label>
-        </div>
-        <div class="flex items-center">
-            <input type="radio" name="soal21" id="soal21d" class="mr-2">
-            <label for="soal21d">D. Mengurangi peran guru dalam pembelajaran</label>
-        </div>
-    </div>
-    <button onclick="toggleAnswer(21)" class="mt-4 px-4 py-2 bg-blue-100 text-blue-700 rounded text-sm hover:bg-blue-200 transition"disabled="">Lihat Jawaban</button>
-    <div id="answer-21" class="answer mt-4"hidden="">
-        <p class="font-semibold">Jawaban: B. Meningkatkan kompetensi abad 21 pada siswa</p>
-        <div class="bg-gray-50 p-3 rounded mt-2">
-            <p class="text-sm text-gray-600">Pembahasan: Fokus dari Kurikulum Merdeka adalah pengembangan kompetensi abad 21 seperti berpikir kritis, kolaborasi, kreativitas, dan komunikasi.</p>
-        </div>
-    </div>
-</div><!-- Soal 22 --><div class="card bg-white p-6 rounded-lg">
-    <h3 class="text-lg font-semibold text-gray-800 mb-2">Soal 22</h3>
-    <div class="text-gray-700 mb-4">
-        <p>"Salah satu tantangan terbesar dalam pembangunan berkelanjutan di Indonesia adalah ketimpangan pembangunan antarwilayah. Daerah-daerah yang berada di kawasan barat Indonesia cenderung lebih maju dibandingkan kawasan timur. Hal ini berdampak pada distribusi sumber daya, kesempatan kerja, dan kualitas pendidikan. Untuk mengatasi hal ini, pemerintah mencanangkan pembangunan infrastruktur yang merata, penguatan ekonomi lokal, serta peningkatan akses layanan dasar seperti kesehatan dan pendidikan."
-        </p>
-        <p class="mt-3 font-medium">Apa permasalahan utama yang dibahas dalam paragraf di atas?</p>
-    </div>
-    <div class="space-y-2 ml-4">
-        <div class="flex items-center">
-            <input type="radio" name="soal22" id="soal22a" class="mr-2">
-            <label for="soal22a">A. Kekurangan tenaga kerja di Indonesia</label>
-        </div>
-        <div class="flex items-center">
-            <input type="radio" name="soal22" id="soal22b" class="mr-2">
-            <label for="soal22b">B. Ketimpangan pembangunan antarwilayah</label>
-        </div>
-        <div class="flex items-center">
-            <input type="radio" name="soal22" id="soal22c" class="mr-2">
-            <label for="soal22c">C. Masalah pendidikan di kota besar</label>
-        </div>
-        <div class="flex items-center">
-            <input type="radio" name="soal22" id="soal22d" class="mr-2">
-            <label for="soal22d">D. Polusi akibat pembangunan</label>
-        </div>
-    </div>
-    <button onclick="toggleAnswer(22)" class="mt-4 px-4 py-2 bg-blue-100 text-blue-700 rounded text-sm hover:bg-blue-200 transition"disabled="">Lihat Jawaban</button>
-    <div id="answer-22" class="answer mt-4"hidden>
-        <p class="font-semibold">Jawaban: B. Ketimpangan pembangunan antarwilayah</p>
-        <div class="bg-gray-50 p-3 rounded mt-2">
-            <p class="text-sm text-gray-600">Pembahasan: Paragraf membahas ketimpangan antara kawasan barat dan timur Indonesia serta dampaknya, yang menjadi permasalahan utama.</p>
-        </div>
-    </div>
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 21</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: C</div>
+  </div>
+  <p>Pembahasan: Penggunaan kata serapan asing dalam teks sebaiknya disesuaikan dengan EYD.</p>
+</div>
+
+<!-- Soal 22 -->
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 22</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: D</div>
+  </div>
+  <p>Pembahasan: Majas personifikasi digunakan dalam kalimat untuk memberikan efek imajinatif.</p>
+</div>
+
 <!-- Soal 23 -->
-<div class="card bg-white p-6 rounded-lg">
-  <h3 class="text-lg font-semibold text-gray-800 mb-2">Soal 23</h3>
-  <div class="text-gray-700 mb-4">
-    <p>Pada suatu siaran berita, disebutkan bahwa penurunan kualitas udara di kota besar disebabkan oleh meningkatnya jumlah kendaraan bermotor serta minimnya penghijauan. Polusi udara dapat memicu berbagai penyakit, seperti ISPA, asma, dan penyakit paru-paru lainnya. Pemerintah mengimbau masyarakat untuk menggunakan transportasi umum dan menanam lebih banyak pohon di lingkungan sekitar.</p>
-    <p class="mt-3 font-medium">Apa simpulan dari paragraf tersebut?</p>
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 23</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: A</div>
   </div>
-  <div class="space-y-2 ml-4">
-    <div class="flex items-center">
-      <input type="radio" name="soal23" id="soal23a" class="mr-2">
-      <label for="soal23a">A. Pemerintah melarang masyarakat memiliki kendaraan pribadi.</label>
-    </div>
-    <div class="flex items-center">
-      <input type="radio" name="soal23" id="soal23b" class="mr-2">
-      <label for="soal23b">B. Polusi udara tidak dapat dicegah meski dengan penghijauan.</label>
-    </div>
-    <div class="flex items-center">
-      <input type="radio" name="soal23" id="soal23c" class="mr-2">
-      <label for="soal23c">C. Transportasi umum dan penghijauan bisa membantu menurunkan polusi udara.</label>
-    </div>
-    <div class="flex items-center">
-      <input type="radio" name="soal23" id="soal23d" class="mr-2">
-      <label for="soal23d">D. Jumlah kendaraan tidak perlu dikurangi di kota besar.</label>
-    </div>
-  </div>
-  <button onclick="toggleAnswer(23)" class="mt-4 px-4 py-2 bg-blue-100 text-blue-700 rounded text-sm hover:bg-blue-200 transition"disabled="">Lihat Jawaban</button>
-  <div id="answer-23" class="answer mt-4"hidden="">
-    <p class="font-semibold">Jawaban: C. Transportasi umum dan penghijauan bisa membantu menurunkan polusi udara.</p>
-    <div class="bg-gray-50 p-3 rounded mt-2">
-      <p class="text-sm text-gray-600">Pembahasan: Paragraf menjelaskan penyebab polusi dan solusi yang dianjurkan pemerintah, yaitu menggunakan transportasi umum dan penghijauan. Maka, simpulan yang tepat adalah C.</p>
-    </div>
-  </div>
+  <p>Pembahasan: Kesesuaian antara judul dan isi paragraf sangat penting untuk koherensi.</p>
 </div>
 
 <!-- Soal 24 -->
-<div class="card bg-white p-6 rounded-lg">
-  <h3 class="text-lg font-semibold text-gray-800 mb-2">Soal 24</h3>
-  <div class="text-gray-700 mb-4">
-    <p>Pada era digital saat ini, anak-anak semakin akrab dengan gawai sejak usia dini. Hal ini menimbulkan kekhawatiran akan dampak negatif seperti kecanduan layar, kurangnya interaksi sosial, serta gangguan perkembangan kognitif. Namun, gawai juga dapat menjadi sarana edukatif jika digunakan secara bijak dengan pengawasan orang tua. Konten-konten edukatif yang interaktif dapat membantu perkembangan daya pikir anak apabila digunakan dengan waktu yang terbatas.</p>
-    <p class="mt-3 font-medium">Apa maksud utama paragraf tersebut?</p>
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 24</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: B</div>
   </div>
-  <div class="space-y-2 ml-4">
-    <div class="flex items-center">
-      <input type="radio" name="soal24" id="soal24a" class="mr-2">
-      <label for="soal24a">A. Anak-anak tidak boleh menggunakan gawai sama sekali.</label>
-    </div>
-    <div class="flex items-center">
-      <input type="radio" name="soal24" id="soal24b" class="mr-2">
-      <label for="soal24b">B. Gawai harus digunakan selama mungkin untuk belajar.</label>
-    </div>
-    <div class="flex items-center">
-      <input type="radio" name="soal24" id="soal24c" class="mr-2">
-      <label for="soal24c">C. Gawai memiliki dampak buruk dan baik tergantung penggunaannya.</label>
-    </div>
-    <div class="flex items-center">
-      <input type="radio" name="soal24" id="soal24d" class="mr-2">
-      <label for="soal24d">D. Gawai hanya berguna bagi orang dewasa.</label>
-    </div>
-  </div>
-  <button onclick="toggleAnswer(24)" class="mt-4 px-4 py-2 bg-blue-100 text-blue-700 rounded text-sm hover:bg-blue-200 transition"disabled="">Lihat Jawaban</button>
-  <div id="answer-24" class="answer mt-4"hidden="">
-    <p class="font-semibold">Jawaban: C. Gawai memiliki dampak buruk dan baik tergantung penggunaannya.</p>
-    <div class="bg-gray-50 p-3 rounded mt-2">
-      <p class="text-sm text-gray-600">Pembahasan: Paragraf menunjukkan dua sisi penggunaan gawai, yaitu dampak buruk dan potensi manfaat jika digunakan dengan bijak. Maka, pilihan C paling sesuai.</p>
-        </div>
-      </div>
-     </div>
-   <div id="questions-container"
+  <p>Pembahasan: Pemilihan diksi harus mempertimbangkan makna dan efek terhadap pembaca.</p>
+</div>
+
 <!-- Soal 25 -->
-</div> class="card bg-white p-6 rounded-lg">
-  <h3 class="text-lg font-semibold text-gray-800 mb-2">Soal 25</h3>
-  <div class="text-gray-700 mb-4">
-    <p>Selama pandemi COVID-19, berbagai sektor terdampak secara signifikan, termasuk sektor pendidikan. Sekolah-sekolah harus beradaptasi dengan sistem pembelajaran daring. Meski awalnya mengalami banyak kendala, lambat laun siswa dan guru mulai terbiasa. Namun, ketimpangan akses internet dan perangkat di daerah-daerah terpencil menjadi hambatan besar yang belum sepenuhnya teratasi.</p>
-    <p class="mt-3 font-medium">Apa yang menjadi fokus utama paragraf tersebut?</p>
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 25</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: C</div>
   </div>
-  <div class="space-y-2 ml-4">
-    <div class="flex items-center">
-      <input type="radio" name="soal25" id="soal25a" class="mr-2">
-      <label for="soal25a">A. Semua sekolah berhasil mengatasi pembelajaran daring dengan mudah.</label>
-    </div>
-    <div class="flex items-center">
-      <input type="radio" name="soal25" id="soal25b" class="mr-2">
-      <label for="soal25b">B. Pandemi membuat siswa tidak perlu belajar.</label>
-    </div>
-    <div class="flex items-center">
-      <input type="radio" name="soal25" id="soal25c" class="mr-2">
-      <label for="soal25c">C. Pembelajaran daring menjadi tantangan karena kesenjangan akses.</label>
-    </div>
-    <div class="flex items-center">
-      <input type="radio" name="soal25" id="soal25d" class="mr-2">
-      <label for="soal25d">D. Guru tidak ingin mengajar secara daring.</label>
-    </div>
-  </div>
-  <button onclick="toggleAnswer(25)" class="mt-4 px-4 py-2 bg-blue-100 text-blue-700 rounded text-sm hover:bg-blue-200 transition"disabled="">Lihat Jawaban</button>
-  <div id="answer-25" class="answer mt-4"hidden="">
-    <p class="font-semibold">Jawaban: C. Pembelajaran daring menjadi tantangan karena kesenjangan akses.</p>
-    <div class="bg-gray-50 p-3 rounded mt-2">
-      <p class="text-sm text-gray-600">Pembahasan: Paragraf menjelaskan bahwa pembelajaran daring menjadi tantangan karena tidak semua daerah memiliki akses yang sama terhadap internet dan perangkat.</p>
-    </div>
-  </div>
+  <p>Pembahasan: Teks tersebut memiliki tujuan persuasif karena mengajak pembaca melakukan sesuatu.</p>
 </div>
 
 <!-- Soal 26 -->
-<div class="card bg-white p-6 rounded-lg">
-  <h3 class="text-lg font-semibold text-gray-800 mb-2">Soal 26</h3>
-  <div class="text-gray-700 mb-4">
-    <p>Kalimat “Ibu membeli sayur di pasar karena dia lapar” secara logika memiliki kekeliruan. Apa kekeliruannya?</p>
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 26</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: A</div>
   </div>
-  <div class="space-y-2 ml-4">
-    <div class="flex items-center">
-      <input type="radio" name="soal26" id="soal26a" class="mr-2">
-      <label for="soal26a">A. Subjeknya ganda</label>
-    </div>
-    <div class="flex items-center">
-      <input type="radio" name="soal26" id="soal26b" class="mr-2">
-      <label for="soal26b">B. Konjungsi yang digunakan tidak tepat</label>
-    </div>
-    <div class="flex items-center">
-      <input type="radio" name="soal26" id="soal26c" class="mr-2">
-      <label for="soal26c">C. Sebab tidak logis antara lapar dan membeli sayur</label>
-    </div>
-    <div class="flex items-center">
-      <input type="radio" name="soal26" id="soal26d" class="mr-2">
-      <label for="soal26d">D. Objeknya ambigu</label>
-    </div>
-  </div>
-  <button onclick="toggleAnswer(26)" class="mt-4 px-4 py-2 bg-blue-100 text-blue-700 rounded text-sm hover:bg-blue-200 transition"disabled="">Lihat Jawaban</button>
-  <div id="answer-26" class="answer mt-4"hidden="">
-    <p class="font-semibold">Jawaban: C. Sebab tidak logis antara lapar dan membeli sayur</p>
-    <div class="bg-gray-50 p-3 rounded mt-2">
-      <p class="text-sm text-gray-600">Pembahasan: Lapar biasanya membuat seseorang ingin makan, bukan membeli sayur mentah. Jadi alasan "karena dia lapar" untuk membeli sayur tidak sepenuhnya logis.</p>
-    </div>
-  </div>
+  <p>Pembahasan: Tanda baca koma diperlukan untuk memisahkan anak kalimat secara jelas.</p>
 </div>
 
 <!-- Soal 27 -->
-<div class="card bg-white p-6 rounded-lg">
-  <h3 class="text-lg font-semibold text-gray-800 mb-2">Soal 27</h3>
-  <div class="text-gray-700 mb-4">
-    <p>Manakah kalimat yang secara struktur terlihat benar, tetapi secara logika menyesatkan?</p>
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 27</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: D</div>
   </div>
-  <div class="space-y-2 ml-4">
-    <div class="flex items-center">
-      <input type="radio" name="soal27" id="soal27a" class="mr-2">
-      <label for="soal27a">A. Semua siswa datang terlambat karena alarm sekolah berbunyi</label>
-    </div>
-    <div class="flex items-center">
-      <input type="radio" name="soal27" id="soal27b" class="mr-2">
-      <label for="soal27b">B. Karena hujan, jalan menjadi basah</label>
-    </div>
-    <div class="flex items-center">
-      <input type="radio" name="soal27" id="soal27c" class="mr-2">
-      <label for="soal27c">C. Ayah membaca koran di pagi hari sambil minum kopi</label>
-    </div>
-    <div class="flex items-center">
-      <input type="radio" name="soal27" id="soal27d" class="mr-2">
-      <label for="soal27d">D. Para pemain merayakan kemenangan setelah pertandingan selesai</label>
-    </div>
-  </div>
-  <button onclick="toggleAnswer(27)" class="mt-4 px-4 py-2 bg-blue-100 text-blue-700 rounded text-sm hover:bg-blue-200 transition"disabled="">Lihat Jawaban</button>
-  <div id="answer-27" class="answer mt-4"hidden="">
-    <p class="font-semibold">Jawaban: A. Semua siswa datang terlambat karena alarm sekolah berbunyi</p>
-    <div class="bg-gray-50 p-3 rounded mt-2">
-      <p class="text-sm text-gray-600">Pembahasan: Alarm sekolah berbunyi setelah jam masuk sebagai penanda, bukan pemicu keterlambatan. Kalimat ini membalik sebab-akibat secara tidak logis.</p>
-    </div>
-  </div>
+  <p>Pembahasan: Pemakaian kata depan dalam kalimat tidak tepat dan menimbulkan kerancuan.</p>
 </div>
 
 <!-- Soal 28 -->
-<div class="card bg-white p-6 rounded-lg">
-  <h3 class="text-lg font-semibold text-gray-800 mb-2">Soal 28</h3>
-  <div class="text-gray-700 mb-4">
-    <p>Kalimat: “Semua siswa lulus ujian, kecuali yang tidak belajar.” Kalimat ini secara logika ...</p>
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 28</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: B</div>
   </div>
-  <div class="space-y-2 ml-4">
-    <div class="flex items-center">
-      <input type="radio" name="soal28" id="soal28a" class="mr-2">
-      <label for="soal28a">A. Mengandung pleonasme</label>
-    </div>
-    <div class="flex items-center">
-      <input type="radio" name="soal28" id="soal28b" class="mr-2">
-      <label for="soal28b">B. Kontradiktif dalam makna</label>
-    </div>
-    <div class="flex items-center">
-      <input type="radio" name="soal28" id="soal28c" class="mr-2">
-      <label for="soal28c">C. Kalimat logis dengan pengecualian wajar</label>
-    </div>
-    <div class="flex items-center">
-      <input type="radio" name="soal28" id="soal28d" class="mr-2">
-      <label for="soal28d">D. Tidak memiliki subjek</label>
-    </div>
-  </div>
-  <button onclick="toggleAnswer(28)" class="mt-4 px-4 py-2 bg-blue-100 text-blue-700 rounded text-sm hover:bg-blue-200 transition"disabled="">Lihat Jawaban</button>
-  <div id="answer-28" class="answer mt-4"hidden="">
-    <p class="font-semibold">Jawaban: C. Kalimat logis dengan pengecualian wajar</p>
-    <div class="bg-gray-50 p-3 rounded mt-2">
-      <p class="text-sm text-gray-600">Pembahasan: Kalimat tersebut logis. Ia menyatakan bahwa semua lulus kecuali kelompok yang jelas ditentukan — yaitu yang tidak belajar.</p>
-    </div>
-  </div>
+  <p>Pembahasan: Penulisan kutipan langsung harus mengikuti kaidah penulisan yang benar.</p>
 </div>
 
 <!-- Soal 29 -->
-<div class="card bg-white p-6 rounded-lg">
-  <h3 class="text-lg font-semibold text-gray-800 mb-2">Soal 29</h3>
-  <div class="text-gray-700 mb-4">
-    <p>Kalimat “Siswa rajin pasti mendapat nilai tinggi” adalah bentuk hubungan ...</p>
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 29</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: C</div>
   </div>
-  <div class="space-y-2 ml-4">
-    <div class="flex items-center">
-      <input type="radio" name="soal29" id="soal29a" class="mr-2">
-      <label for="soal29a">A. Hubungan sebab-akibat mutlak</label>
-    </div>
-    <div class="flex items-center">
-      <input type="radio" name="soal29" id="soal29b" class="mr-2">
-      <label for="soal29b">B. Hubungan kausal bersyarat</label>
-    </div>
-    <div class="flex items-center">
-      <input type="radio" name="soal29" id="soal29c" class="mr-2">
-      <label for="soal29c">C. Hubungan kontradiktif</label>
-    </div>
-    <div class="flex items-center">
-      <input type="radio" name="soal29" id="soal29d" class="mr-2">
-      <label for="soal29d">D. Hubungan netral</label>
-    </div>
-  </div>
-  <button onclick="toggleAnswer(29)" class="mt-4 px-4 py-2 bg-blue-100 text-blue-700 rounded text-sm hover:bg-blue-200 transition"disabled="">Lihat Jawaban</button>
-  <div id="answer-29" class="answer mt-4"hidden="">
-    <p class="font-semibold">Jawaban: B. Hubungan kausal bersyarat</p>
-    <div class="bg-gray-50 p-3 rounded mt-2">
-      <p class="text-sm text-gray-600">Pembahasan: Pernyataan tersebut bersifat umum dan bersyarat, karena tidak semua siswa rajin pasti mendapat nilai tinggi (bisa dipengaruhi faktor lain).</p>
-    </div>
-  </div>
+  <p>Pembahasan: Kata tidak baku dalam paragraf tersebut harus diganti agar sesuai konteks akademik.</p>
 </div>
 
 <!-- Soal 30 -->
-<div class="card bg-white p-6 rounded-lg">
-  <h3 class="text-lg font-semibold text-gray-800 mb-2">Soal 30</h3>
-  <div class="text-gray-700 mb-4">
-    <p>Jika semua burung bisa terbang dan ayam adalah burung, maka apakah ayam bisa terbang?</p>
+<div class="question">
+  <div class="question-header">
+    <h2>Soal 30</h2>
+    <div class="answer-badge"><i class="fas fa-key"></i> Jawaban: A</div>
   </div>
-  <div class="space-y-2 ml-4">
-    <div class="flex items-center">
-      <input type="radio" name="soal30" id="soal30a" class="mr-2">
-      <label for="soal30a">A. Bisa, karena ayam adalah burung</label>
-    </div>
-    <div class="flex items-center">
-      <input type="radio" name="soal30" id="soal30b" class="mr-2">
-      <label for="soal30b">B. Tidak bisa, karena ayam tidak terbang</label>
-    </div>
-    <div class="flex items-center">
-      <input type="radio" name="soal30" id="soal30c" class="mr-2">
-      <label for="soal30c">C. Premis awal salah sehingga kesimpulan tidak valid</label>
-    </div>
-    <div class="flex items-center">
-      <input type="radio" name="soal30" id="soal30d" class="mr-2">
-      <label for="soal30d">D. Semua jawaban salah</label>
-    </div>
-  </div>
-  <button onclick="toggleAnswer(30)" class="mt-4 px-4 py-2 bg-blue-100 text-blue-700 rounded text-sm hover:bg-blue-200 transition"dis>Lihat Jawaban</button>
-  <div id="answer-30" class="answer mt-4"hidden="">
-    <p class="font-semibold">Jawaban: C. Premis awal salah sehingga kesimpulan tidak valid</p>
-    <div class="bg-gray-50 p-3 rounded mt-2">
-      <p class="text-sm text-gray-600">Pembahasan: Premis "semua burung bisa terbang" tidak benar dalam dunia nyata. Maka kesimpulan bahwa ayam bisa terbang berdasarkan premis itu menjadi cacat logika.</p>
-    </div>
-  </div>
+  <p>Pembahasan: Gagasan utama dalam paragraf terletak di akhir sebagai bentuk penegasan.</p>
 </div>
-<div id ="questions-container">
-  
-              </div>
-            </div>
-        </div>
-        <!-- Pagination -->
-        <div class="text-center mt-6">
-  <button onclick="checkAnswers()" class="bg-green-500 text-white px-6 py-2 rounded hover:bg-green-600 transition">
-    Lihat Nilai
-  </button>
-
-  <button onclick="resetScore()" class="ml-4 text-sm text-red-600 underline">
-    Reset
-  </button>
-
-  <p id="score-display" class="mt-4 text-lg font-semibold text-blue-700"></p>
-</div>
-        <div class="mt-8 flex justify-center">
-            <ul class="pagination flex space-x-1">
-                <li class="active px-4 py-2 border rounded cursor-pointer">1</li>
-                <li class="px-4 py-2 border rounded cursor-pointer">2</li>
-                <li class="px-4 py-2 border rounded cursor-pointer">3</li>
-                <li class="px-4 py-2 border rounded cursor-pointer">4</li>
-                <li class="px-4 py-2 border rounded cursor-pointer">5</li>
-                <li class="px-4 py-2 border rounded cursor-pointer">6</li>
-            </ul>
-        </div>
-    </main>
-
-    <footer class="bg-gray-100 py-6 mt-8">
-        <div class="container mx-auto px-4 text-center text-gray-600 text-sm">
-            <p>Latihan Soal TKA Bahasa Indonesia 2025 &copy; Edukasi Interaktif</p>
-        </div>
-    </footer>
-
-   
-     
-
-   <script>
-  let hasSubmitted = false;
-
-  function toggleAnswer(questionNumber) {
-    if (!hasSubmitted) {
-      alert('Silakan klik "Lihat Nilai" terlebih dahulu untuk melihat jawaban.');
-      return;
-    }
-
-    const answer = document.getElementById(`answer-${questionNumber}`);
-    answer.classList.toggle('hidden');
-
-    const button = event.target;
-    if (!answer.classList.contains('hidden')) {
-      button.textContent = 'Sembunyikan Jawaban';
-      button.classList.add('bg-blue-200');
-    } else {
-      button.textContent = 'Lihat Jawaban';
-      button.classList.remove('bg-blue-200');
-    }
-  }
-
-  function checkAnswers() {
-    const totalQuestions = 30;
-    let correctCount = 0;
-    let allAnswered = true;
-
-    const answerKey = {
-      1: 'a', 2: 'c', 3: 'b', 4: 'd', 5: 'a',
-      6: 'b', 7: 'd', 8: 'a', 9: 'b', 10: 'c',
-      11: 'a', 12: 'b', 13: 'd', 14: 'a', 15: 'c',
-      16: 'b', 17: 'c', 18: 'd', 19: 'a', 20: 'b',
-      21: 'c', 22: 'd', 23: 'a', 24: 'b', 25: 'c',
-      26: 'a', 27: 'd', 28: 'b', 29: 'c', 30: 'a'
-    };
-
-    for (let i = 1; i <= totalQuestions; i++) {
-      const selected = document.querySelector(`input[name="soal${i}"]:checked`);
-      if (!selected) {
-        allAnswered = false;
-        break;
-      }
-      if (selected.id.toLowerCase().endsWith(answerKey[i])) {
-        correctCount++;
-      }
-    }
-
-    if (!allAnswered) {
-      alert('Harap jawab semua soal terlebih dahulu sebelum melihat hasil.');
-      return;
-    }
-
-    hasSubmitted = true;
-    const resultText = `Kamu menjawab ${correctCount} dari ${totalQuestions} soal dengan benar.`;
-    document.getElementById('score-display').textContent = resultText;
-
-    // Tampilkan semua pembahasan
-    for (let i = 1; i <= totalQuestions; i++) {
-      const pembahasan = document.getElementById(`answer-${i}`);
-      if (pembahasan) {
-        pembahasan.hidden = false;
-      }
-
-      const toggleBtn = document.querySelector(`button[onclick="toggleAnswer(${i})"]`);
-      if (toggleBtn) {
-        toggleBtn.disabled = false;
-      }
-    }
-  }
-
-  function resetScore() {
-    hasSubmitted = false;
-    document.getElementById('score-display').textContent = '';
-
-    // Reset semua pilihan dan sembunyikan pembahasan
-    for (let i = 1; i <= 30; i++) {
-      const radios = document.getElementsByName(`soal${i}`);
-      radios.forEach(radio => radio.checked = false);
-
-      const pembahasan = document.getElementById(`answer-${i}`);
-      if (pembahasan) {
-        pembahasan.hidden = true;
-      }
-
-      const toggleBtn = document.querySelector(`button[onclick="toggleAnswer(${i})"]`);
-      if (toggleBtn) {
-        toggleBtn.textContent = 'Lihat Jawaban';
-        toggleBtn.classList.remove('bg-blue-200');
-        toggleBtn.disabled = true;
-      }
-    }
-  }
-
-  // Pagination
-  function showPage(pageNumber) {
-    const itemsPerPage = 5;
-    const allQuestions = document.querySelectorAll('#questions-container .card');
-
-    allQuestions.forEach(q => q.style.display = 'none');
-
-    const startIndex = (pageNumber - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    for (let i = startIndex; i < endIndex && i < allQuestions.length; i++) {
-      allQuestions[i].style.display = 'block';
-    }
-
-    document.querySelectorAll('.pagination li').forEach((item, index) => {
-      if (index === pageNumber - 1) {
-        item.classList.add('active');
-      } else {
-        item.classList.remove('active');
-      }
-    });
-  }
-
-  document.addEventListener('DOMContentLoaded', function () {
-    showPage(1);
-    document.querySelectorAll('.pagination li').forEach((item, index) => {
-      item.addEventListener('click', () => showPage(index + 1));
-    });
-
-    // Default: semua tombol jawaban disable
-    for (let i = 1; i <= 30; i++) {
-      const toggleBtn = document.querySelector(`button[onclick="toggleAnswer(${i})"]`);
-      if (toggleBtn) toggleBtn.disabled = true;
-    }
-  }
- );
-</script>
-</body>
-</html>
